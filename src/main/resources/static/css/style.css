@@ -1,0 +1,682 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f8fa;
+    color: #1f2937;
+}
+
+
+/* =========================
+HEADER
+========================= */
+
+header {
+    height: 70px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #087f8c;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #374151;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #087f8c;
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.hero {
+    min-height: 480px;
+    background: linear-gradient(
+        135deg,
+        #087f8c,
+        #10a8a0
+    );
+
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+}
+
+.hero-content {
+    max-width: 650px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 55px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 35px;
+    max-width: 550px;
+}
+
+.hero button {
+    background: white;
+    color: #087f8c;
+    border: none;
+    padding: 15px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background: #f0fdfd;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+SERVICES
+========================= */
+
+.services {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.services h2 {
+    font-size: 32px;
+    margin-bottom: 45px;
+    color: #1f2937;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    color: #087f8c;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.card p {
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer {
+    background: #12343b;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+footer p {
+    margin: 5px;
+    font-size: 14px;
+}
+
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 0 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 50px 7%;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================
+SOLICITAR CITA
+========================= */
+
+.appointment-section {
+    min-height: 700px;
+    padding: 60px 20px;
+    background: #f5f8fa;
+}
+
+.appointment-container {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 45px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.appointment-container h1 {
+    text-align: center;
+    font-size: 35px;
+    color: #087f8c;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 35px;
+}
+
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #374151;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 15px;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #087f8c;
+}
+
+.appointment-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #087f8c;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.appointment-button:hover {
+    background: #066b75;
+}
+
+/* =========================
+MENSAJE DE ÉXITO
+========================= */
+
+.success-message {
+    display: none;
+    text-align: center;
+}
+
+.success-icon {
+    width: 75px;
+    height: 75px;
+
+    margin: 0 auto 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #087f8c;
+    color: white;
+
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.success-message h1 {
+    color: #087f8c;
+    font-size: 30px;
+
+    margin-bottom: 12px;
+}
+
+.success-message > p {
+    color: #6b7280;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+RESUMEN DE LA CITA
+========================= */
+
+.appointment-summary {
+
+    text-align: left;
+
+    background: #f5f8fa;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    margin-bottom: 30px;
+
+    border-left: 4px solid #087f8c;
+}
+
+.appointment-summary p {
+
+    margin-bottom: 12px;
+
+    color: #374151;
+}
+
+.appointment-summary p:last-child {
+
+    margin-bottom: 0;
+}
+
+.appointment-summary strong {
+
+    color: #12343b;
+}
+
+
+/* =========================
+BOTONES DE CONFIRMACIÓN
+========================= */
+
+.success-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    justify-content: center;
+}
+
+.primary-button,
+.secondary-button {
+
+    text-decoration: none;
+
+    padding: 13px 22px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+
+/* BOTÓN PRINCIPAL */
+
+.primary-button {
+
+    background: #087f8c;
+
+    color: white;
+}
+
+.primary-button:hover {
+
+    background: #066b75;
+}
+
+
+/* BOTÓN SECUNDARIO */
+
+.secondary-button {
+
+    background: #e5e7eb;
+
+    color: #374151;
+}
+
+.secondary-button:hover {
+
+    background: #d1d5db;
+}
+
+
+/* =========================
+RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .appointment-container {
+
+        padding: 30px 20px;
+    }
+
+    .success-buttons {
+
+        flex-direction: column;
+    }
+
+    .primary-button,
+    .secondary-button {
+
+        width: 100%;
+
+        text-align: center;
+    }
+
+}
+
+/* =========================
+MIS CITAS
+========================= */
+
+.appointments-section {
+    min-height: 700px;
+    padding: 60px 20px;
+    background: #f5f8fa;
+}
+
+.appointments-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.appointments-container h1 {
+    text-align: center;
+    font-size: 35px;
+    color: #087f8c;
+    margin-bottom: 10px;
+}
+
+.appointments-subtitle {
+    text-align: center;
+    color: #6b7280;
+    margin-bottom: 40px;
+}
+
+
+/* TARJETA DE CITA */
+
+.appointment-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+
+    border-left: 5px solid #087f8c;
+}
+
+.appointment-card h3 {
+    color: #087f8c;
+    margin-bottom: 18px;
+}
+
+.appointment-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.appointment-info p {
+    color: #374151;
+}
+
+.appointment-info strong {
+    color: #12343b;
+}
+
+
+/* ESTADO */
+
+.appointment-status {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
+
+    background: #e6f7f5;
+
+    color: #087f8c;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* SIN CITAS */
+
+.no-appointments {
+    display: none;
+
+    text-align: center;
+
+    background: white;
+
+    padding: 50px 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+}
+
+.empty-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.no-appointments h2 {
+    color: #12343b;
+    margin-bottom: 10px;
+}
+
+.no-appointments p {
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+
+/* CARGANDO */
+
+.loading {
+    text-align: center;
+    color: #6b7280;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .appointment-info {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================
+   FORMULARIO DE EDICIÓN
+   ========================= */
+
+.edit-form-container {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.edit-form-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.edit-form-container .form-group {
+    margin-bottom: 18px;
+}
+
+.edit-form-container label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: 600;
+}
+
+.edit-form-container input,
+.edit-form-container select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.edit-form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.btn-guardar,
+.btn-cancelar-edicion {
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-guardar {
+    background: #198754;
+    color: white;
+}
+
+.btn-cancelar-edicion {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-guardar:hover,
+.btn-cancelar-edicion:hover {
+    opacity: 0.9;
+}
+
+#mensajeEdicion {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* =========================
+   BOTONES DE ACCIONES DE CITA
+   ========================= */
+
+.appointment-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.btn-modificar,
+.btn-cancelar {
+    border: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+.btn-modificar {
+    background: #0d6efd;
+    color: white;
+}
+
+.btn-cancelar {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-modificar:hover,
+.btn-cancelar:hover {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+.btn-modificar:active,
+.btn-cancelar:active {
+    transform: translateY(0);
+}

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Solicitar cita | CSYOP</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =========================
+        ENCABEZADO
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+            CSYOP
+        </div>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="solicitar-cita.html">Solicitar cita</a>
+            <a href="#">Mis citas</a>
+            <a href="#">Iniciar sesión</a>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+        CONTENIDO PRINCIPAL
+    ========================== -->
+
+    <main>
+
+        <section class="appointment-section">
+
+            <div class="appointment-container">
+
+
+                <!-- =========================
+                    FORMULARIO
+                ========================== -->
+
+                <div id="formularioCita">
+
+                    <h1>Solicitar una cita</h1>
+
+                    <p class="subtitle">
+                        Completa la información para solicitar tu cita médica.
+                    </p>
+
+
+                    <form id="citaForm">
+
+
+                        <!-- PACIENTE -->
+
+                        <div class="user-info">
+    <p><strong>Paciente:</strong> <span id="nombreUsuario"></span></p>
+    <p><strong>Cédula:</strong> <span id="cedulaUsuario"></span></p>
+</div>
+
+
+                        <!-- EPS -->
+
+                        <div class="form-group">
+
+                            <label for="eps">
+                                EPS
+                            </label>
+
+                            <select
+                                id="eps"
+                                name="eps"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecciona tu EPS
+                                </option>
+
+                                <option value="Nueva EPS">
+                                    Nueva EPS
+                                </option>
+
+                                <option value="Sanitas">
+                                    Sanitas
+                                </option>
+
+                                <option value="Capresoca">
+                                    Capresoca
+                                </option>
+
+                                <option value="Sanidad militar">
+                                    Sanidad militar
+                                </option>
+
+                                <option value="Compensar">
+                                    Compensar
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- ESPECIALIDAD -->
+
+                        <div class="form-group">
+
+                            <label for="especialidad">
+                                Especialidad
+                            </label>
+
+                            <select
+                                id="especialidad"
+                                name="especialidad"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecciona una especialidad
+                                </option>
+
+                                <option value="Medicina General">
+                                    Medicina General
+                                </option>
+
+                                <option value="Odontología">
+                                    Odontología
+                                </option>
+
+                                <option value="Pediatría">
+                                    Pediatría
+                                </option>
+
+                                <option value="Dermatología">
+                                    Dermatología
+                                </option>
+
+                                <option value="Medicina Interna">
+                                    Medicina Interna
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- MÉDICO -->
+
+                        <div class="form-group">
+
+                            <label for="medico">
+                                Médico
+                            </label>
+
+                            <select
+                                id="medico"
+                                name="medico"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecciona un médico
+                                </option>
+
+                                <option value="Carlos Rodríguez">
+                                    Dr. Carlos Rodríguez
+                                </option>
+
+                                <option value="Laura Martínez">
+                                    Dra. Laura Martínez
+                                </option>
+
+                                <option value="Andrés Gómez">
+                                    Dr. Andrés Gómez
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- FECHA -->
+
+                        <div class="form-group">
+
+                            <label for="fecha">
+                                Fecha
+                            </label>
+
+                            <input
+                                type="date"
+                                id="fecha"
+                                name="fecha"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- HORA -->
+
+                        <div class="form-group">
+
+                            <label for="hora">
+                                Hora
+                            </label>
+
+                            <select
+                                id="hora"
+                                name="hora"
+                                required
+                            >
+
+                                <option value="">
+                                    Selecciona un horario
+                                </option>
+
+                                <option value="08:00:00">
+                                    08:00 AM
+                                </option>
+
+                                <option value="09:00:00">
+                                    09:00 AM
+                                </option>
+
+                                <option value="10:00:00">
+                                    10:00 AM
+                                </option>
+
+                                <option value="11:00:00">
+                                    11:00 AM
+                                </option>
+
+                                <option value="14:00:00">
+                                    02:00 PM
+                                </option>
+
+                                <option value="15:00:00">
+                                    03:00 PM
+                                </option>
+
+                                <option value="16:00:00">
+                                    04:00 PM
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- ESTADO -->
+
+                        <input
+                            type="hidden"
+                            id="estado"
+                            value="PROGRAMADA"
+                        >
+
+
+                        <!-- BOTÓN -->
+
+                        <button
+                            type="submit"
+                            class="appointment-button"
+                        >
+                            Solicitar cita
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- =========================
+                    MENSAJE DE ÉXITO
+                ========================== -->
+
+                <div id="mensajeExito" class="success-message" style="display: none;">
+
+                    <div class="success-icon">
+                        ✓
+                    </div>
+
+                    <h1>
+                        Cita agendada correctamente
+                    </h1>
+
+                    <p>
+                        Tu cita médica ha sido registrada exitosamente.
+                    </p>
+
+
+                    <div class="appointment-summary">
+
+                        <p>
+                            <strong>Número de cita:</strong>
+                            <span id="numeroCita"></span>
+                        </p>
+
+                        <p>
+                            <strong>Paciente:</strong>
+                            <span id="resumenPaciente"></span>
+                        </p>
+
+                        <p>
+                            <strong>EPS:</strong>
+                            <span id="resumenEps"></span>
+                        </p>
+
+                        <p>
+                            <strong>Especialidad:</strong>
+                            <span id="resumenEspecialidad"></span>
+                        </p>
+
+                        <p>
+                            <strong>Médico:</strong>
+                            <span id="resumenMedico"></span>
+                        </p>
+
+                        <p>
+                            <strong>Fecha:</strong>
+                            <span id="resumenFecha"></span>
+                        </p>
+
+                        <p>
+                            <strong>Hora:</strong>
+                            <span id="resumenHora"></span>
+                        </p>
+
+                        <p>
+                            <strong>Estado:</strong>
+                            <span id="resumenEstado"></span>
+                        </p>
+
+                    </div>
+
+
+                    <div class="success-buttons">
+
+                        <a
+                            href="index.html"
+                            class="secondary-button"
+                        >
+                            Volver al inicio
+                        </a>
+
+                        <a
+                            href="mis-citas.html"
+                            class="primary-button"
+                        >
+                            Ver mis citas
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+        PIE DE PÁGINA
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 CSYOP
+        </p>
+
+        <p>
+            Plataforma de gestión de citas médicas
+        </p>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

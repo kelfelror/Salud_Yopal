@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mis citas | CSYOP</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+
+    <header>
+
+        <div class="logo">
+            CSYOP
+        </div>
+
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="solicitar-cita.html">Solicitar cita</a>
+            <a href="mis-citas.html">Mis citas</a>
+            <a href="#">Iniciar sesión</a>
+        </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO -->
+
+    <main>
+
+        <section class="appointments-section">
+
+            <div class="appointments-container">
+
+                <h1>Mis citas</h1>
+
+                <p class="appointments-subtitle">
+                    Consulta las citas médicas registradas.
+                </p>
+
+
+                <!-- AQUÍ JAVASCRIPT CARGARÁ LAS CITAS -->
+
+                <div id="listaCitas">
+
+                    <p class="loading">
+                        Cargando citas...
+                    </p>
+
+                </div>
+
+                <div id="formularioEdicion" class="edit-form-container" style="display: none;">
+
+    <h2>Modificar cita</h2>
+
+    <form id="formEditarCita">
+
+        <input type="hidden" id="editarCitaId">
+
+        <div class="form-group">
+            <label for="editarEps">EPS</label>
+            <select id="editarEps" required>
+                <option value="">Selecciona una EPS</option>
+                <option value="Nueva EPS">Nueva EPS</option>
+                <option value="Sanitas">Sanitas</option>
+                <option value="SURA">SURA</option>
+                <option value="Compensar">Compensar</option>
+                <option value="Salud Total">Salud Total</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="editarEspecialidad">Especialidad</label>
+            <input
+                type="text"
+                id="editarEspecialidad"
+                required>
+        </div>
+
+        <div class="form-group">
+            <label for="editarMedico">Médico</label>
+            <input
+                type="text"
+                id="editarMedico"
+                required>
+        </div>
+
+        <div class="form-group">
+            <label for="editarFecha">Fecha</label>
+            <input
+                type="date"
+                id="editarFecha"
+                required>
+        </div>
+
+        <div class="form-group">
+            <label for="editarHora">Hora</label>
+            <input
+                type="time"
+                id="editarHora"
+                required>
+        </div>
+
+        <div class="edit-form-actions">
+
+            <button type="submit" class="btn-guardar">
+                Guardar cambios
+            </button>
+
+            <button
+                type="button"
+                id="btnCancelarEdicion"
+                class="btn-cancelar-edicion">
+                Volver
+            </button>
+
+        </div>
+
+        <p id="mensajeEdicion"></p>
+
+    </form>
+
+</div>
+
+
+                <!-- MENSAJE CUANDO NO HAY CITAS -->
+
+                <div
+                    id="sinCitas"
+                    class="no-appointments"
+                >
+
+                    <div class="empty-icon">
+                        📅
+                    </div>
+
+                    <h2>
+                        No tienes citas registradas
+                    </h2>
+
+                    <p>
+                        Cuando solicites una cita,
+                        aparecerá aquí.
+                    </p>
+
+                    <a
+                        href="solicitar-cita.html"
+                        class="primary-button"
+                    >
+                        Solicitar una cita
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <p>
+            © 2026 CSYOP
+        </p>
+
+        <p>
+            Plataforma de gestión de citas médicas
+        </p>
+
+    </footer>
+
+
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>
